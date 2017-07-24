@@ -49,6 +49,9 @@ mv bedtools-2.24.0.tar.gz install_packages
 
 ### install HTSeq
 pip install HTSeq
+
+### install cutadapt
+pip install cutadapt
 ```
 
 After that, download this script:
