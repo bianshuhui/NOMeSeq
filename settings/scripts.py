@@ -165,7 +165,7 @@ $tabix_exe -f -p bed -s 1 -b 2 -e 3 $dir_database/${ref}_lambda.fa.$query.bed.gz
 
 for i in `cut -f 1 $dir_database/${ref}_lambda.fa.fai`
 do
-    tabix $dir_database/${ref}_lambda.fa.$query.bed.gz $i >$dir_database/${ref}_lambda.fa.$query/$i.bed
+    $tabix_exe $dir_database/${ref}_lambda.fa.$query.bed.gz $i >$dir_database/${ref}_lambda.fa.$query/$i.bed
 done
         """)
         return l_sh_info
