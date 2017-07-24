@@ -10,7 +10,7 @@ import logging
 
 import ChIP.utils.module_running_jobs as m_jobs
 import ChIP.settings.projpath         as m_proj
-import ChIP.settings.scripts          as m_scpt
+import MethGC.settings.scripts        as m_scpt
 
 logging.basicConfig(
     level=logging.INFO,
@@ -144,7 +144,7 @@ class DataBaseInit(m_scpt.Scripts):
         my_job.running_multi(cpu=8, is_debug = self.is_debug)
 #       my_job.running_SGE(vf="400m", maxjob=100, is_debug = self.is_debug)
     
-    def __get_region(sefl, query):
+    def __get_region(self, query):
         sh_file      = "%s/db05.repeat.sh"      % (self.scripts)
         sh_work_file = "%s/db05.repeat_work.sh" % (self.scripts)
         
