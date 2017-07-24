@@ -146,11 +146,11 @@ class DataBaseInit(m_scpt.Scripts):
     
     def __get_region(self, query):
         sh_file      = "%s/db05.repeat.sh"      % (self.scripts)
-        sh_work_file = "%s/db05.repeat_work.sh" % (self.scripts)
+        sh_work_file = "%s/db05.repeat_%s_work.sh" % (self.scripts, query)
         
         l_sh_info = self.db_05_Region(query)
         l_sh_work = []
-        l_sh_work.append("sh %s %s" % (sh_file,self.ref))
+        l_sh_work.append("sh %s %s %s" % (sh_file,self.ref, query))
         
         my_job = m_jobs.run_jobs(sh_file, sh_work_file, l_sh_info, l_sh_work)
         my_job.running_multi(cpu=8, is_debug = self.is_debug)
